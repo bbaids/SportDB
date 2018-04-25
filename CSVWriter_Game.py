@@ -18,29 +18,23 @@ with open('desired_stats.csv', 'r') as statFile:
 statString = statString[1:]
 
 ##Making API call
-gameJSON = client.getPlayerGamelogs(team='bos', date='20161026', playerstats=statString)
+gameJSON = client.getPlayerGamelogs(playerstats=statString)
 
 print('Completed GET')
 
-f = open('output.txt', 'w')
-f.write(str(gameJSON))
-f.close()
+##Create the header list
+headers = ['game_id', 'team_id', 'player_id']
+headers.extend(statList)
 
-##with open('schedule_2017_playoff.csv', 'w') as csvfile:
-##    file = csv.writer(csvfile, delimiter=',', lineterminator='\n')
-##    file.writerow(['ID', 'Date', 'AwayTeamID', 'AwayTeamCity', 'AwayTeamName', 'AwayTeamAbbrev', 'HomeTeamID', 'HomeTeamCity', 'HomeTeamName', 'HomeTeamAbbrev'])
-##
-##    for game in scheduleJSON['fullgameschedule']['gameentry']:
-##        file.writerow([game['id'],
-##                        game['date'],
-##                        game['awayTeam']['ID'],
-##                        game['awayTeam']['City'],
-##                        game['awayTeam']['Name'],
-##                        game['awayTeam']['Abbreviation'],
-##                        game['homeTeam']['ID'],
-##                        game['homeTeam']['City'],
-##                        game['homeTeam']['Name'],
-##                        game['homeTeam']['Abbreviation']
-##                       ])
-##
-##print('Write Complete')
+with open('game_2016_2017_regular.csv', 'w') as csvfile:
+    file = csv.writer(csvfile, delimiter=',', lineterminator='\n')
+    file.writerow(headers)
+
+    for gamePlayer in gameJSON['playergamelogs']['gamelogs']:
+        keys = [gamePlayer['game']['id'], gamePlayer['team']['ID'], gamePlayer['player']['ID']]
+        row = keys
+        for stat in statList:
+            row.append(gamePlayer['stats'][stat]['#text'])
+        file.writerow(row)
+
+print('Write Complete')
