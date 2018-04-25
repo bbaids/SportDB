@@ -5,20 +5,26 @@ client = APIController('nba', '2016-2017-regular')
 
 print('Initiated Controller')
 
-gameJSON = client.getPlayerGamelogs(player='isaiah-thomas', date='20161026')
+##read the file of desired fields and put it in a list and string.
+statList = []
+statString = ''
+with open('desired_stats.csv', 'r') as statFile:
+    f = csv.reader(statFile, delimiter=',', lineterminator='\n')
+    for row in f:
+        statString = statString + ',' + row[1]
+        statList.append(row[0])
+
+##Trimming leading comma
+statString = statString[1:]
+
+##Making API call
+gameJSON = client.getPlayerGamelogs(team='bos', date='20161026', playerstats=statString)
 
 print('Completed GET')
 
-##f = open('output.txt', 'w')
-##f.write(str(gameJSON))
-##f.close()
-
-with open('available_stats.csv', 'w') as csvfile:
-    file = csv.writer(csvfile, delimiter='c', lineterminator='\n')
-    for stat in gameJSON['playergamelogs']['gamelogs'][0]['stats']:
-        file.writerow([str(stat)])
-
-##print('Wrote to file')
+f = open('output.txt', 'w')
+f.write(str(gameJSON))
+f.close()
 
 ##with open('schedule_2017_playoff.csv', 'w') as csvfile:
 ##    file = csv.writer(csvfile, delimiter=',', lineterminator='\n')
