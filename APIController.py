@@ -72,3 +72,32 @@ class APIController:
         except exception as e:
             print('getPlayers encountered an error')
             print(str(e))
+
+############### GET PLAYER GAME STATISTICS ###################################
+    def getPlayerGamelogs(self, team = None, player = None, game = None, date = None, playerstats = None):
+        try:
+            requestForDate = self.forDate
+            controllerURL = self.buildURL()
+            requestURL = str(controllerURL + '/' + 'player_gamelogs.' + self.format)
+            params = {
+                    "team": team
+                    , "player": player
+                    , "game": game
+                    , "date": date
+                    , "playerstats": playerstats
+                    }
+            headers = {
+                    "Authorization": "Basic " + base64.b64encode('{}:{}'.format(self.username,self.password).encode('utf-8')).decode('ascii')
+                    }   
+            
+            response = requests.get(url = requestURL, params = params, headers = headers)
+
+            if(requests.codes.ok == response.status_code):
+               return response.json()
+
+            else:
+               print('getPlayers Request Failed')
+            
+        except exception as e:
+            print('getPlayers encountered an error')
+            print(str(e))
