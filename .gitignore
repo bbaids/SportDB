@@ -2,3 +2,4 @@ configuration.py
 Season_Schedules/
 __pycache__/
 *.txt
+*.idea

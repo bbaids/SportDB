@@ -22,7 +22,6 @@ class APIController:
 ############### GET PLAYERS #########################################
     def getPlayers(self, team = None, player = None, rosterStatus = None):
         try:
-            requestForDate = self.forDate
             controllerURL = self.buildURL()
             requestURL = str(controllerURL + '/' + 'roster_players.' + self.format)
             params = {
