@@ -18,7 +18,7 @@ with open('desired_stats.csv', 'r') as statFile:
 statString = statString[1:]
 
 ##Making API call
-gameJSON = client.getPlayerGamelogs(playerstats=statString)
+gameJSON = client.getPlayerGamelogs(team='bos',playerstats=statString)
 
 print('Completed GET')
 

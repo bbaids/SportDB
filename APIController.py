@@ -96,14 +96,13 @@ class APIController:
             
             response = requests.get(url = requestURL, params = params, headers = headers)
 
-            if(requests.codes.ok == response.status_code):
-               return response.json()
+            if(response.status_code == requests.codes.ok):
+                return response.json()
 
             else:
-               print('getPlayerGamelogs Request Failed')
-               print(response.request.url)
-               print(response.status_code)
+                print('getPlayerGamelogs GET request was not successful')
+                print(response.status_code)
             
-        except exception as e:
+        except requests.exceptions.RequestException as e:
             print('getPlayerGamelogs encountered an error')
             print(str(e))
