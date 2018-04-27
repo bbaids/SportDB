@@ -41,9 +41,9 @@ class APIController:
 
             else:
                print('getPlayers Request Failed')
-               print(response.request.url)
                print(response.status_code)
-            
+               print(response.request.url)
+               
         except exception as e:
             print('getPlayers encountered an error')
             print(str(e))
@@ -69,8 +69,8 @@ class APIController:
 
             else:
                print('getFullSchedule Request Failed')
-               print(response.request.url)
                print(response.status_code)
+               print(response.request.url)
             
         except exception as e:
             print('getFullSchedule encountered an error')
@@ -101,6 +101,7 @@ class APIController:
             else:
                 print('getPlayerGamelogs GET request was not successful')
                 print(response.status_code)
+                print(response.request.url)
             
         except requests.exceptions.RequestException as e:
             print('getPlayerGamelogs encountered an error')

@@ -3,7 +3,7 @@ from APIController import APIController
 
 def csvWriter_Game(season):
     client = APIController('nba', season)
-    print('Initiated Controller')
+    print('Initiated Controller For ' + season)
 
     #Read stats and abbreviations from file
     statString, statList = getStats()
@@ -12,7 +12,7 @@ def csvWriter_Game(season):
     headers = ['game_id', 'team_id', 'player_id']
     headers.extend(statList)
 
-    teamList = getTeams()
+    teamList = getTeams(season)
 
     with open('game_' + season + '.csv', 'w') as csvfile:
         file = csv.writer(csvfile, delimiter=',', lineterminator='\n')
@@ -20,7 +20,7 @@ def csvWriter_Game(season):
 
     for team in teamList:
         print('Making GET call for ' + team)
-        gameJSON = client.getPlayerGamelogs(team=team,playerstats=statString)
+        gameJSON = client.getPlayerGamelogs(team=team) #,playerstats=statString)
 
         with open('game_' + season + '.csv', 'a') as csvfile:
             file = csv.writer(csvfile, delimiter=',', lineterminator='\n')
@@ -49,9 +49,9 @@ def getStats():
     return statString, statList
 
 #read the file of teams and put it in a list.
-def getTeams():
+def getTeams(season):
     teamList = []
-    with open('TeamList.csv', 'r') as teamFile:
+    with open('team_list_' + season + '.csv', 'r') as teamFile:
         f = csv.reader(teamFile, delimiter=',', lineterminator='\n')
         for teamRow in f:
             teamList.append(teamRow[0])
