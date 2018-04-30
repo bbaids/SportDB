@@ -1,23 +1,27 @@
 import csv
 from APIController import APIController
 
-client = APIController('nba', '2016-2017-regular')
+def getStats(season, fordate):
 
-print('Initiated Controller')
+        client = APIController('nba', season)
 
-gameJSON = client.getPlayerGamelogs(player='isaiah-thomas', date='20161026')
+        print('Initiated Controller')
 
-print('Completed GET')
+        seasonJSON = client.getCurrentSeason(fordate)
 
-##print(gameJSON['playergamelogs']['gamelogs'][0]['stats']['Fg2PtAtt'])
+        print('Completed GET')
 
-availableStats = []
-for stat in gameJSON['playergamelogs']['gamelogs'][0]['stats']:
-        availableStats.append(stat)
+        statAbbreviation = []
+        statName = []
+        for stat in seasonJSON['currentseason']['season'][0]['supportedPlayerStats']['playerStat']:
+                statistic = stat['abbreviation']
+                if(not (statistic.endswith('/G') or statistic.endswith('%'))):
+                        statAbbreviation.append(stat['abbreviation'])
+                        statName.append(stat['name'].replace(" ", "_"))
+        
+        with open('stats_' + season + '.csv', 'w') as csvfile:
+                file = csv.writer(csvfile, delimiter=',', lineterminator='\n')
+                for i in range(len(statName)):
+                        file.writerow([statName[i], statAbbreviation[i]])
 
-print(availableStats)
-
-with open('available_stats.csv', 'w') as csvfile:
-    file = csv.writer(csvfile, delimiter=',', lineterminator='\n')
-    for stat in availableStats:
-        file.writerow([stat, gameJSON['playergamelogs']['gamelogs'][0]['stats'][stat]['@abbreviation']])
+getStats('2015-2016-regular', '20151027')

@@ -106,3 +106,46 @@ class APIController:
         except requests.exceptions.RequestException as e:
             print('getPlayerGamelogs encountered an error')
             print(str(e))
+
+    def getCurrentSeason(self, fordate):
+        try:
+            controllerURL = self.buildURL()
+            requestURL = str(controllerURL + '/' + 'current_season.' + self.format)
+            params = {
+                    "fordate":fordate
+                    }
+            headers = {
+                    "Authorization": "Basic " + base64.b64encode('{}:{}'.format(self.username,self.password).encode('utf-8')).decode('ascii')
+                    }
+            response = requests.get(url = requestURL, params = params, headers = headers)
+
+            if(response.status_code == requests.codes.ok):
+                return response.json()
+
+            else:
+                print('getCurrentSeason encountered an error')
+                print(response.status_code)
+                print(response.request.url)
+            
+        except requests.exceptions.RequestException as e:
+            print('getCurrentSeason encountered an error')
+            print(str(e))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
