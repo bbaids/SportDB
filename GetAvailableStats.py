@@ -24,4 +24,7 @@ def getStats(season, fordate):
                 for i in range(len(statName)):
                         file.writerow([statName[i], statAbbreviation[i]])
 
-getStats('2015-2016-regular', '20151027')
+with open('nba_season.csv', 'r') as csvfile:
+        file = csv.reader(csvfile, delimiter=',', lineterminator='\n')
+        for season in file:
+                getStats(season[0], season[1])

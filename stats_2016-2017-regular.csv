@@ -18,3 +18,13 @@ Blocks_Against,BA
 Personal_Fouls,PF
 Plus/Minus,+/-
 Minutes_Played,MIN
+Fouls,F
+Fouls_Drawn,FD
+Personal_Fouls_Drawn,PFD
+Technical_Fouls,TF
+Technical_Fouls_Drawn,TFD
+Flagrant_1_Fouls,FF1
+Flagrant_1_Fouls_Drawn,FF1D
+Flagrant_2_Fouls,FF2
+Flagrant_2_Fouls_Drawn,FF2D
+Ejections_From_Games,EJE
