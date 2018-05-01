@@ -53,8 +53,8 @@ CREATE TABLE stg.schedule
 	(
 		game_key bigint NOT NULL
 		, date_key int NOT NULL
-		, away_team_key int NOT NULL
-		, home_team_key int NOT NULL
+		, away_team_key bigint NOT NULL
+		, home_team_key bigint NOT NULL
 		,CONSTRAINT pk_game_key PRIMARY KEY CLUSTERED
 			(
 				game_key ASC

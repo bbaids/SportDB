@@ -1,0 +1,1574 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/30/2018 1:52:38 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CHI-BBAIDS5"
+  DTS:CreatorName="WMP\bbaids"
+  DTS:DTSID="{378BAE5E-2A2A-4635-923D-E194867BD034}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.4001.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Load_Game_Data"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{82C1ED0B-552A-4435-A1FB-0DE8A2C20F7B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[20152016Regular]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Loads 20152016Regular Game Data"
+      DTS:DTSID="{FA8F37D4-C276-4F65-9DEE-90B38F5E0375}"
+      DTS:ObjectName="20152016Regular">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::filePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="game_id"
+              DTS:DTSID="{4A3C3E73-EA96-4275-A07A-F5ED04A93870}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="team_id"
+              DTS:DTSID="{C82E133E-D0F2-4C5F-A472-CCDE819C39B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="player_id"
+              DTS:DTSID="{A781CA64-4008-441B-84CB-6EF40BBD17D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fg2PtAtt"
+              DTS:DTSID="{94A7C874-76BC-4139-B58D-475746E68072}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fg2PtMade"
+              DTS:DTSID="{E9E3A8E5-D11E-467A-BCE7-62E545EAF93E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fg3PtAtt"
+              DTS:DTSID="{815099A5-778E-4A39-BFAE-436529376477}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fg3PtMade"
+              DTS:DTSID="{BB8B627C-A8BB-4D05-B8D2-6DF6B8E3E74C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FgAtt"
+              DTS:DTSID="{F85A2B19-0277-44C2-AE9B-F59838B56B92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FgMade"
+              DTS:DTSID="{8CF528F0-81AE-4951-B643-5F62B3F8431D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FtAtt"
+              DTS:DTSID="{9834D2DE-8A42-4D6C-8A6B-526ABFD7EA2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FtMade"
+              DTS:DTSID="{EEEBB8AF-2022-4F07-9FFB-32D5F1310581}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OffReb"
+              DTS:DTSID="{A23090DB-A3FF-40FC-B22A-403F99B1E138}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DefReb"
+              DTS:DTSID="{AEF70D9C-E580-4393-8707-CB61AFB70E71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reb"
+              DTS:DTSID="{AA4D4CC3-A466-493C-A5C0-E7593BF8B0A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ast"
+              DTS:DTSID="{5A4BA3C0-F7C1-47A2-BC4F-6055FC9F7B0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pts"
+              DTS:DTSID="{2E24BD76-0F5D-49B9-BB80-D653ED7D96C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tov"
+              DTS:DTSID="{56E8B90D-807E-4FCA-8376-10931CBC8E9E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stl"
+              DTS:DTSID="{71357281-88C5-4DDF-AA3A-0CA9E6C1BE14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Blk"
+              DTS:DTSID="{5B9E50A6-BBC5-46D2-9C74-2B7F6DEA46C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BlkAgainst"
+              DTS:DTSID="{38895A75-4AC5-480A-AFFB-7393680ED984}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FoulPers"
+              DTS:DTSID="{D876B655-7518-4DD1-9604-2886D34146C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PlusMinus"
+              DTS:DTSID="{E10B79AA-533A-4C0D-9DFD-BFBB7AB57649}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MinSeconds"
+              DTS:DTSID="{E0B39841-126E-43E7-931C-1577E029ACC2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.NBA_SportDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7B299A32-4174-469B-B170-90637609F6DE}"
+      DTS:ObjectName="localhost.NBA_SportDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=NBA_SportDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B4B05E40-012E-4A39-A4E8-DB73B696C2A1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="filePath">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{FE9AD5C2-F9E7-4A6E-9F89-1B19E2255E7B}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{1672017E-DF8D-44D7-A946-A46709BB206E}"
+        DTS:ObjectName="{1672017E-DF8D-44D7-A946-A46709BB206E}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\BBAIDS\Documents\sportDB" />
+            <FEFEProperty
+              FileSpec="game_*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Load_Game_CSV"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{E4CF5E1E-1A35-40E9-AC7F-BDE861C4DFC3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load_Game_CSV"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Adding game_player_key"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Inputs[Derived Column Input].Columns[game_id]"
+                          cachedDataType="i8"
+                          cachedName="game_id"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[game_id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Inputs[Derived Column Input].Columns[player_id]"
+                          cachedDataType="i8"
+                          cachedName="player_id"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[player_id]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Output].Columns[game_player_key]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Output].Columns[game_player_key]"
+                          name="game_player_key"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,5,1252)#{Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[game_id]} + (DT_STR,5,1252)#{Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[player_id]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,5,1252)game_id + (DT_STR,5,1252)player_id</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Inputs[Data Conversion Input].Columns[game_player_key]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="game_player_key"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Output].Columns[game_player_key]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Outputs[Data Conversion Output].Columns[int_game_player_key]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Outputs[Data Conversion Output].Columns[int_game_player_key]"
+                          name="int_game_player_key"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Output].Columns[game_player_key]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Load_Game_CSV\game csv"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="game csv"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[20152016Regular]"
+                      connectionManagerRefId="Package.ConnectionManagers[20152016Regular]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[game_id]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[game_id]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[game_id]"
+                          name="game_id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[team_id]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[team_id]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[team_id]"
+                          name="team_id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[player_id]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[player_id]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[player_id]"
+                          name="player_id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg2PtAtt]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Fg2PtAtt]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg2PtAtt]"
+                          name="Fg2PtAtt"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg2PtMade]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Fg2PtMade]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg2PtMade]"
+                          name="Fg2PtMade"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg3PtAtt]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Fg3PtAtt]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg3PtAtt]"
+                          name="Fg3PtAtt"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg3PtMade]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Fg3PtMade]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg3PtMade]"
+                          name="Fg3PtMade"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FgAtt]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[FgAtt]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FgAtt]"
+                          name="FgAtt"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FgMade]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[FgMade]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FgMade]"
+                          name="FgMade"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FtAtt]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[FtAtt]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FtAtt]"
+                          name="FtAtt"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FtMade]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[FtMade]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FtMade]"
+                          name="FtMade"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[OffReb]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[OffReb]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[OffReb]"
+                          name="OffReb"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[DefReb]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[DefReb]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[DefReb]"
+                          name="DefReb"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Reb]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Reb]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Reb]"
+                          name="Reb"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Ast]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Ast]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Ast]"
+                          name="Ast"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Pts]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Pts]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Pts]"
+                          name="Pts"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Tov]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Tov]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Tov]"
+                          name="Tov"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Stl]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Stl]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Stl]"
+                          name="Stl"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Blk]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Blk]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Blk]"
+                          name="Blk"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[BlkAgainst]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[BlkAgainst]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[BlkAgainst]"
+                          name="BlkAgainst"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FoulPers]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[FoulPers]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FoulPers]"
+                          name="FoulPers"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[PlusMinus]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[PlusMinus]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[PlusMinus]"
+                          name="PlusMinus"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[MinSeconds]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[MinSeconds]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[MinSeconds]"
+                          name="MinSeconds"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[game_id]"
+                          dataType="i8"
+                          name="game_id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[team_id]"
+                          dataType="i8"
+                          name="team_id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[player_id]"
+                          dataType="i8"
+                          name="player_id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Fg2PtAtt]"
+                          dataType="i4"
+                          name="Fg2PtAtt" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Fg2PtMade]"
+                          dataType="i4"
+                          name="Fg2PtMade" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Fg3PtAtt]"
+                          dataType="i4"
+                          name="Fg3PtAtt" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Fg3PtMade]"
+                          dataType="i4"
+                          name="Fg3PtMade" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[FgAtt]"
+                          dataType="i4"
+                          name="FgAtt" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[FgMade]"
+                          dataType="i4"
+                          name="FgMade" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[FtAtt]"
+                          dataType="i4"
+                          name="FtAtt" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[FtMade]"
+                          dataType="i4"
+                          name="FtMade" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[OffReb]"
+                          dataType="i4"
+                          name="OffReb" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[DefReb]"
+                          dataType="i4"
+                          name="DefReb" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Reb]"
+                          dataType="i4"
+                          name="Reb" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Ast]"
+                          dataType="i4"
+                          name="Ast" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Pts]"
+                          dataType="i4"
+                          name="Pts" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Tov]"
+                          dataType="i4"
+                          name="Tov" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Stl]"
+                          dataType="i4"
+                          name="Stl" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[Blk]"
+                          dataType="i4"
+                          name="Blk" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[BlkAgainst]"
+                          dataType="i4"
+                          name="BlkAgainst" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[FoulPers]"
+                          dataType="i4"
+                          name="FoulPers" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[PlusMinus]"
+                          dataType="i4"
+                          name="PlusMinus" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].ExternalColumns[MinSeconds]"
+                          dataType="i4"
+                          name="MinSeconds" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Insert Into Stg Game"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg].[game]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[localhost.NBA_SportDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBA_SportDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[Fg2PtAtt]"
+                          cachedDataType="i4"
+                          cachedName="Fg2PtAtt"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fg2ptatt]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg2PtAtt]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[Fg2PtMade]"
+                          cachedDataType="i4"
+                          cachedName="Fg2PtMade"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fg2ptmade]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg2PtMade]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[Fg3PtAtt]"
+                          cachedDataType="i4"
+                          cachedName="Fg3PtAtt"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fg3ptatt]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg3PtAtt]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[Fg3PtMade]"
+                          cachedDataType="i4"
+                          cachedName="Fg3PtMade"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fg3ptmade]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Fg3PtMade]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[FgAtt]"
+                          cachedDataType="i4"
+                          cachedName="FgAtt"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fgatt]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FgAtt]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[FgMade]"
+                          cachedDataType="i4"
+                          cachedName="FgMade"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fgmade]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FgMade]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[FtAtt]"
+                          cachedDataType="i4"
+                          cachedName="FtAtt"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[ftatt]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FtAtt]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[FtMade]"
+                          cachedDataType="i4"
+                          cachedName="FtMade"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[ftmade]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FtMade]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[OffReb]"
+                          cachedDataType="i4"
+                          cachedName="OffReb"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[offreb]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[OffReb]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[DefReb]"
+                          cachedDataType="i4"
+                          cachedName="DefReb"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[defreb]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[DefReb]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[Reb]"
+                          cachedDataType="i4"
+                          cachedName="Reb"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[reb]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Reb]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[Ast]"
+                          cachedDataType="i4"
+                          cachedName="Ast"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[ast]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Ast]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[Pts]"
+                          cachedDataType="i4"
+                          cachedName="Pts"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[pts]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Pts]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[Tov]"
+                          cachedDataType="i4"
+                          cachedName="Tov"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[tov]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Tov]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[Stl]"
+                          cachedDataType="i4"
+                          cachedName="Stl"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[stl]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Stl]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[Blk]"
+                          cachedDataType="i4"
+                          cachedName="Blk"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[blk]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[Blk]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[BlkAgainst]"
+                          cachedDataType="i4"
+                          cachedName="BlkAgainst"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[blkagainst]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[BlkAgainst]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[FoulPers]"
+                          cachedDataType="i4"
+                          cachedName="FoulPers"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[foulpers]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[FoulPers]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[PlusMinus]"
+                          cachedDataType="i4"
+                          cachedName="PlusMinus"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[plusminus]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[PlusMinus]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[MinSeconds]"
+                          cachedDataType="i4"
+                          cachedName="MinSeconds"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[minseconds]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[MinSeconds]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[game_id]"
+                          cachedDataType="i8"
+                          cachedName="game_id"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[game_key]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[game_id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[team_id]"
+                          cachedDataType="i8"
+                          cachedName="team_id"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[team_key]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[team_id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[player_id]"
+                          cachedDataType="i8"
+                          cachedName="player_id"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[player_key]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output].Columns[player_id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].Columns[int_game_player_key]"
+                          cachedDataType="i8"
+                          cachedName="int_game_player_key"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[game_player_key]"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Outputs[Data Conversion Output].Columns[int_game_player_key]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[game_player_key]"
+                          dataType="i8"
+                          name="game_player_key" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[game_key]"
+                          dataType="i8"
+                          name="game_key" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[player_key]"
+                          dataType="i8"
+                          name="player_key" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[team_key]"
+                          dataType="i8"
+                          name="team_key" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fg2ptatt]"
+                          dataType="i4"
+                          name="fg2ptatt" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fg2ptmade]"
+                          dataType="i4"
+                          name="fg2ptmade" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fg3ptatt]"
+                          dataType="i4"
+                          name="fg3ptatt" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fg3ptmade]"
+                          dataType="i4"
+                          name="fg3ptmade" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fgatt]"
+                          dataType="i4"
+                          name="fgatt" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[fgmade]"
+                          dataType="i4"
+                          name="fgmade" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[ftatt]"
+                          dataType="i4"
+                          name="ftatt" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[ftmade]"
+                          dataType="i4"
+                          name="ftmade" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[offreb]"
+                          dataType="i4"
+                          name="offreb" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[defreb]"
+                          dataType="i4"
+                          name="defreb" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[reb]"
+                          dataType="i4"
+                          name="reb" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[ast]"
+                          dataType="i4"
+                          name="ast" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[pts]"
+                          dataType="i4"
+                          name="pts" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[tov]"
+                          dataType="i4"
+                          name="tov" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[stl]"
+                          dataType="i4"
+                          name="stl" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[blk]"
+                          dataType="i4"
+                          name="blk" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[blkagainst]"
+                          dataType="i4"
+                          name="blkagainst" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[foulpers]"
+                          dataType="i4"
+                          name="foulpers" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[plusminus]"
+                          dataType="i4"
+                          name="plusminus" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input].ExternalColumns[minseconds]"
+                          dataType="i4"
+                          name="minseconds" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Load_Game_CSV.Paths[Data Conversion Output]"
+                  endId="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Load_Game_CSV.Paths[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Load_Game_CSV.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Load_Game_CSV\game csv.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{4EF62CC0-E53E-4C20-8BE3-27B610759E64}"
+          DTS:ObjectName="{4EF62CC0-E53E-4C20-8BE3-27B610759E64}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::filePath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Foreach Loop Container\Load_Game_CSV"
+          TopLeft="29,60" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205,177"
+          Size="205,220"
+          Id="Package\Foreach Loop Container"
+          TopLeft="155.5,123.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Load_Game_CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Foreach Loop Container\Load_Game_CSV\game csv"
+          TopLeft="351,169" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Foreach Loop Container\Load_Game_CSV\Adding game_player_key"
+          TopLeft="319.5,245.5" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Load_Game_CSV.Paths[Flat File Source Output]"
+          TopLeft="415.25,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.5"
+              Start="0,0"
+              End="0,27">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game"
+          TopLeft="324,387" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Foreach Loop Container\Load_Game_CSV\Data Conversion"
+          TopLeft="337.5,318.5" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Load_Game_CSV.Paths[Derived Column Output]"
+          TopLeft="416.75,287.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Load_Game_CSV.Paths[Data Conversion Output]"
+          TopLeft="414.5,360.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.5"
+              Start="0,0"
+              End="0,19">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Load_Game_CSV\Insert Into Stg Game">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

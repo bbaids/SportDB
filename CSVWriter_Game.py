@@ -57,7 +57,3 @@ def getTeams(season):
             teamList.append(teamRow[0])
             
     return teamList
-
-seasonList = ['2016-2017-regular', '2017-2018-regular']
-for season in seasonList:
-    csvWriter_Game(season)

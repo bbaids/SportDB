@@ -1,0 +1,31 @@
+team_key,team_city,team_name,team_abbrev,active_flag
+86,Cleveland,Cavaliers,CLE,1
+97,Portland,Trail Blazers,POR,1
+101,Golden State,Warriors,GSW,1
+95,Orlando,Magic,ORL,1
+87,Indiana,Pacers,IND,1
+82,Boston,Celtics,BOS,1
+81,Toronto,Raptors,TOR,1
+90,Milwaukee,Bucks,MIL,1
+107,Memphis,Grizzlies,MEM,1
+110,New Orleans,Pelicans,NOP,1
+85,Philadelphia,76ers,PHI,1
+104,Phoenix,Suns,PHX,1
+105,Los Angeles,Lakers,LAL,1
+91,Atlanta,Hawks,ATL,1
+89,Chicago,Bulls,CHI,1
+103,Sacramento,Kings,SAC,1
+84,Brooklyn,Nets,BRO,1
+88,Detroit,Pistons,DET,1
+96,Oklahoma City,Thunder,OKL,1
+92,Miami,Heat,MIA,1
+108,Dallas,Mavericks,DAL,1
+98,Utah,Jazz,UTA,1
+93,Charlotte,Hornets,CHA,1
+83,New York,Knicks,NYK,1
+106,San Antonio,Spurs,SAS,1
+99,Denver,Nuggets,DEN,1
+102,Los Angeles,Clippers,LAC,1
+109,Houston,Rockets,HOU,1
+100,Minnesota,Timberwolves,MIN,1
+94,Washington,Wizards,WAS,1
