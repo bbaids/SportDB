@@ -20,29 +20,29 @@ def csvWriter_Game(season):
 
     for team in teamList:
         print('Making GET call for ' + team)
-        gameJSON = client.getPlayerGamelogs(team=team) #,playerstats=statString)
+        gameJSON = client.getPlayerGamelogs(team=team,playerstats=statString)
 
         with open('game_' + season + '.csv', 'a') as csvfile:
             file = csv.writer(csvfile, delimiter=',', lineterminator='\n')
-    
+
             for gamePlayer in gameJSON['playergamelogs']['gamelogs']:
-                keys = [gamePlayer['game']['id'], gamePlayer['team']['ID'], gamePlayer['player']['ID']]
-                row = keys
+                row = [gamePlayer['game']['id'], gamePlayer['team']['ID'], gamePlayer['player']['ID']]
                 for stat in statList:
                     row.append(gamePlayer['stats'][stat]['#text'])
                 file.writerow(row)
 
-        print('Write Complete for ' + team)    
+        print('Write Complete for ' + team)
+    print('Write Complete for ' + season)
 
 #read the file of desired fields and put it in a list and string.
 def getStats():
     statList = []
     statString = ''
-    with open('desired_stats.csv', 'r') as statFile:
+    with open('stat_list.csv', 'r') as statFile:
         f = csv.reader(statFile, delimiter=',', lineterminator='\n')
         for statRow in f:
             statString = statString + ',' + statRow[1]
-            statList.append(statRow[0])
+            statList.append(statRow[2])
 
     #Trimming leading comma
     statString = statString[1:]
@@ -57,3 +57,7 @@ def getTeams(season):
             teamList.append(teamRow[0])
             
     return teamList
+
+seasonList = ['2016-2017-regular', '2017-2018-regular']
+for season in seasonList:
+    csvWriter_Game(season)
